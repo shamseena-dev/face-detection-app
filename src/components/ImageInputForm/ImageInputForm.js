@@ -16,8 +16,17 @@ function ImageInputForm() {
         <div className="card-content">
           <h6 className="white-text">Add Image Link here:</h6>
 
-          <form onSubmit={(e)=>{e.preventDefault();
-          setImageLink(image);}}>
+          <form onSubmit={(e)=>{
+                     e.preventDefault();
+                     setImageLink(image);     
+      app.models.predict(Clarifai.FACE_DETECT_MODEL, 'https://amazingy.com/images/detailed/5/Tata_Harper_-_Illuminating_Eye_Cream_on_Face.jpg')
+        .then(response => {
+          console.log(response);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      }}>
             <input
               type="text"
               placeholder="Add Image link..."
