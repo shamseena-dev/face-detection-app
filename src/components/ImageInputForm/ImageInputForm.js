@@ -19,9 +19,18 @@ function ImageInputForm() {
           <form onSubmit={(e)=>{
                      e.preventDefault();
                      setImageLink(image);     
-      app.models.predict(Clarifai.FACE_DETECT_MODEL, 'https://amazingy.com/images/detailed/5/Tata_Harper_-_Illuminating_Eye_Cream_on_Face.jpg')
+      app.models.predict(Clarifai.FACE_DETECT_MODEL, image)
         .then(response => {
-          console.log(response);
+          const boxArray= response.outputs[0].data.regions.map(box=>{
+            return {
+              top_row :box.region_info.bounding_box.top_row,
+               left_col :box.region_info.bounding_box.left_col,
+                bottom_row :box.region_info.bounding_box.bottom_row,
+                 right_col :box.region_info.bounding_box.right_col
+
+            }
+          });
+          console.log("here", boxArray);
         })
         .catch(err => {
           console.log(err);
