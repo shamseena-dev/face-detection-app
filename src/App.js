@@ -6,7 +6,7 @@ import ImageInputForm from './components/ImageInputForm/ImageInputForm';
 import imageContext from './contexts/imageContext';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 
-class App extends Component{
+function App() {
   const [imageLink,setImageLink] = useState("https://www.google.com");
   return (
     <imageContext.Provider value={[imageLink,setImageLink]}>
