@@ -23,8 +23,7 @@ function ImageInputForm() {
             ></input>
 
             <button className="btn waves-effect waves-light" type="submit">
-              {" "}
-              Submit
+              Submit Image
             </button>
           </form>
         </div>
