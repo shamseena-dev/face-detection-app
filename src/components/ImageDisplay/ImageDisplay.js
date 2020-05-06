@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from "react";
+import imageContext from "../../contexts/imageContext";
 
 function ImageDisplay(){
+    
     return(
         <div className="display">
-            <img src={} alt="image display" style={{"width":"400px","height":"auto"}}/>
+            <img src={useContext(imageContext)} alt="display" style={{"width":"400px","height":"auto"}}/>
         </div>
     );
 }
