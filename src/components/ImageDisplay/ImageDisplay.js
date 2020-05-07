@@ -1,16 +1,22 @@
-import React, { useContext } from "react";
-import imageContext from "../../contexts/imageContext";
+import React from "react";
+
 import "./imageDisplay.css";
 
-function ImageDisplay(){
-	const [link] = useContext(imageContext);
+
+const ImageDisplay =({ imageUrl, box }) =>{
+	
     return(
-        <div>
-            <img className="img1" src={link} alt="" style={{"width":"500px","height":"100%"}} />
-            <div className="bounding_box" style={{top: "4%" ,"bottom":"93%","right":"96%","left":"4%"}}>ki</div>
-            <p> Link : {link}</p>
+        <div className="center">
+        <div className="absoluteDiv">
+        <img id='inputimage' alt='' src={imageUrl} width='500px' height='auto'/>
             
+            <div className="bounding_box" style={{top: box.toprow , bottom: box.bottomrow, right:box.rightcol,left:box.leftcol}}></div>
+            
+            
+            
+        </div>
         </div>
     );
 }
+
 export default ImageDisplay;

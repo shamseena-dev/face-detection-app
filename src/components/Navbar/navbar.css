@@ -1,0 +1,12 @@
+.navbar-div{
+	height:100px !important;
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+}
+.navbar-div .logo-img{
+	margin-right:20px;
+
+}

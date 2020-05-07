@@ -1,13 +1,16 @@
 .bounding_box{
 	position:absolute;
-	z-index:2;
+
 	box-shadow: 0 0 0 3px red inset;
 	display:flex;
 	flex-wrap:wrap;
 	justify-content : center;
 	cursor:pointer;
-	background-color: yellow;
+	
 }
 .img1{
-	z-index:-1;
+	
+}
+.absoluteDiv{
+	position: absolute;
 }
