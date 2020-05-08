@@ -6,7 +6,8 @@ import ImageInputForm from './components/ImageInputForm/ImageInputForm';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import Clarifai from 'clarifai';
 import Footer from './components/Footer/Footer';
-import pic from "./girl-pic.jpg";
+
+import sample from "./kids.JPG";
 
 const app = new Clarifai.App({apiKey: '4e2ee373c4444f918cb57d903b6843a1'});
 
@@ -16,7 +17,7 @@ class App extends React.Component {
     super();
     this.state = {
       input: '',
-      imageUrl: '',
+      imageUrl: sample,
       boxes: [],
       
     }
