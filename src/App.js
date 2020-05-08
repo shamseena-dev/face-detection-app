@@ -17,10 +17,29 @@ class App extends React.Component {
     this.state = {
       input: '',
       imageUrl: '',
-      box: {},
+      boxes: [],
       
     }
   }
+  calculateFacePosition = (data)=>{
+    const clarifaiFace_Array = data.outputs[0].data.regions;
+
+    const image = document.getElementById('inputimage');
+    const width = Number(image.width);
+    const height = Number(image.height);
+    const positions = clarifaiFace_Array.map(face =>{
+        
+        return {
+            leftcol: face.region_info.bounding_box.left_col * width,
+            toprow: face.region_info.bounding_box.top_row * height,
+            rightcol: width - (face.region_info.bounding_box.right_col * width),
+            bottomrow: height - (face.region_info.bounding_box.bottom_row * height)
+    }
+    });
+
+    return positions;
+  }
+  /*
   calculateFacePosition = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputimage');
@@ -33,10 +52,11 @@ class App extends React.Component {
       bottomrow: height - (clarifaiFace.bottom_row * height)
     }
   }
+  */
 
-  displayFaceBox = (box) => {
-    this.setState({box: box});
-    console.log("box",box);
+  displayFaceBox = (boxes) => {
+    this.setState({boxes: boxes});
+    
   }
 
   onInputChange = (event) => {
@@ -57,7 +77,7 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
   render() {
-    const {  imageUrl, box } = this.state;
+    const {  imageUrl, boxes } = this.state;
   return (
     
     <div className="App">
@@ -65,7 +85,7 @@ class App extends React.Component {
       <Home />
       <ImageInputForm  onInputChange={this.onInputChange}
                 onButtonSubmit={this.onButtonSubmit}/>
-      <ImageDisplay box={box} imageUrl={imageUrl}/>
+      <ImageDisplay boxes={boxes} imageUrl={imageUrl}/>
       
       <Footer />
     </div>
