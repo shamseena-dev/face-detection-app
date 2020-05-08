@@ -12,8 +12,8 @@ const ImageDisplay =({ imageUrl, boxes }) =>{
     
           
     return(
-        <div className="center">
-        <div className="absoluteDiv">
+        <div className="center card-div">
+        <div className="absoluteDiv ">
         <img id='inputimage' className="border-img" alt='' src={imageUrl} width='500px' height='auto'/>
          
             
