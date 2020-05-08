@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:white;
+   background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),url('./robot.jpg');
+    height:100%;
 }
 
 code {

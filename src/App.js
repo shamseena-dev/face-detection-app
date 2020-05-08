@@ -5,8 +5,11 @@ import './App.css';
 import ImageInputForm from './components/ImageInputForm/ImageInputForm';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import Clarifai from 'clarifai';
+import Footer from './components/Footer/Footer';
+import pic from "./girl-pic.jpg";
 
 const app = new Clarifai.App({apiKey: '4e2ee373c4444f918cb57d903b6843a1'});
+
 
 class App extends React.Component {
   constructor() {
@@ -18,7 +21,7 @@ class App extends React.Component {
       
     }
   }
-  calculateFaceLocation = (data) => {
+  calculateFacePosition = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
@@ -49,7 +52,7 @@ class App extends React.Component {
         this.state.input)
       .then(response => {
         
-        this.displayFaceBox(this.calculateFaceLocation(response))
+        this.displayFaceBox(this.calculateFacePosition(response))
       })
       .catch(err => console.log(err));
   }
@@ -64,7 +67,7 @@ class App extends React.Component {
                 onButtonSubmit={this.onButtonSubmit}/>
       <ImageDisplay box={box} imageUrl={imageUrl}/>
       
-
+      <Footer />
     </div>
     
   );

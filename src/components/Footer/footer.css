@@ -1,0 +1,12 @@
+.footer-div{
+	
+	position: fixed;
+	width:100%;
+	background-color: #111111;
+	clear:both;
+	height:60px;
+	bottom:0;
+}
+.copyright-div p{
+   margin-right:20px;
+}
