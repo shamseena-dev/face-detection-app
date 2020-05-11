@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter , Route} from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import './App.css';
@@ -6,6 +7,8 @@ import ImageInputForm from './components/ImageInputForm/ImageInputForm';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import Clarifai from 'clarifai';
 import Footer from './components/Footer/Footer';
+import SignUp from './components/SignUp/SignUp';
+import Register from './components/Register/Register';
 
 import sample from "./kids.JPG";
 
@@ -80,16 +83,18 @@ class App extends React.Component {
   render() {
     const {  imageUrl, boxes } = this.state;
   return (
-    
+    <BrowserRouter>
     <div className="App">
       <Navbar />
       <Home />
       <ImageInputForm  onInputChange={this.onInputChange}
                 onButtonSubmit={this.onButtonSubmit}/>
       <ImageDisplay boxes={boxes} imageUrl={imageUrl}/>
-      
+      <SignUp />
+      <Register />
       <Footer />
     </div>
+    </BrowserRouter>
     
   );
 }
