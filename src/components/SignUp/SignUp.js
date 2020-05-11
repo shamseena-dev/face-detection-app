@@ -1,16 +1,26 @@
-
 import React from 'react';
+import logo from '../../logo.png';
+import "../Navbar/navbar.css";
 
 class SignUp extends React.Component {
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		this.state={
 			value: ''
 		}
 	}
 	render(){
+		const {history} = this.props;
 		return(
-			
+			<>
+			<nav className="darken-3 navbar black navbar-div">
+                          <img src={logo} alt="logo" style={{"width":"60px","height":"auto"}} className="left logo-img"/>
+                          <h4 className="center"> FACE DETECTION APP </h4>
+                          
+                        
+                          <button onClick={()=>{history.push('/register')}} type="button" className="btn red right">REGISTER</button> 
+                           
+                          </nav>
 			<div className="container">
 			  
 			    
@@ -28,7 +38,7 @@ class SignUp extends React.Component {
 			      </div>
 			    
 			  </div>
-        
+          </>
 			);
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter , Route} from 'react-router-dom';
+import {BrowserRouter , Route, Link} from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import './App.css';
@@ -9,8 +9,9 @@ import Clarifai from 'clarifai';
 import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import Register from './components/Register/Register';
-
+import logo from './logo.png';
 import sample from "./kids.JPG";
+import "./components/Navbar/navbar.css";
 
 const app = new Clarifai.App({apiKey: '4e2ee373c4444f918cb57d903b6843a1'});
 
@@ -81,18 +82,31 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
   render() {
+    const {history} = this.props;
     const {  imageUrl, boxes } = this.state;
   return (
     <BrowserRouter>
     <div className="App">
-      <Navbar />
-      <Home />
-      <ImageInputForm  onInputChange={this.onInputChange}
-                onButtonSubmit={this.onButtonSubmit}/>
-      <ImageDisplay boxes={boxes} imageUrl={imageUrl}/>
-      <SignUp />
-      <Register />
-      <Footer />
+      <Route path='/home' render={()=> <div>
+                      <nav className="darken-3 navbar black navbar-div">
+                          <img src={logo} alt="logo" style={{"width":"60px","height":"auto"}} className="left logo-img"/>
+                          <h4 className="center"> FACE DETECTION APP </h4>
+                    
+                          <Link to='/' ><button type="button" className="btn red right">SIGN OUT</button>
+                          </Link>
+                           
+                          </nav>
+                      <ImageInputForm
+                        onInputChange={this.onInputChange}
+                        onButtonSubmit={this.onButtonSubmit}
+                      />
+                      <ImageDisplay boxes={boxes} imageUrl={imageUrl} />
+            </div>} />
+
+     <Route path='/signup' component={SignUp} />
+     <Route path='/register' component={Register} />
+     <Route path='/' exact component = {SignUp} />
+     
     </div>
     </BrowserRouter>
     

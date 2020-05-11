@@ -1,4 +1,6 @@
 import React from 'react';
+import logo from '../../logo.png';
+import "../Navbar/navbar.css";
 
 class Register extends React.Component {
 	constructor(){
@@ -8,7 +10,17 @@ class Register extends React.Component {
 		}
 	}
 	render(){
+		const {history} = this.props;
 		return(
+			<>
+			<nav className="darken-3 navbar black navbar-div">
+                          <img src={logo} alt="logo" style={{"width":"60px","height":"auto"}} className="left logo-img"/>
+                          <h4 className="center"> FACE DETECTION APP </h4>
+                          
+                        
+                          <button onClick={()=>{history.push('/signup')}} type="button" className="btn red right">SIGNUP</button> 
+                           
+                          </nav>
 			<div className="container">
 			  
 			    
@@ -26,7 +38,7 @@ class Register extends React.Component {
 			      </div>
 			    
 			  </div>
-        
+          </>
 			);
 	}
 }
