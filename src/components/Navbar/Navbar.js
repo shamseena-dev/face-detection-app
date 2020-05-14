@@ -15,13 +15,17 @@ class Navbar extends React.Component {
    }
    render(){
 	   const beforeLoggedIn = (<>
+	   	   <div>
 	   	   <button onClick={()=>{this.props.history.push('/signup')}} type="button" className="btn red right">SIGNUP</button> 
 	   	    <button onClick={()=>{this.props.history.push('/register')}} type="button" className="btn red right">REGISTER</button>  
+	   	    </div>
 	   	  </>);
 
 	   const afterLoggedIn = ( <>
+	   	<div>
 	   	 <Link to='/signup' ><button onClick={this.signOut} type="button" className="btn red right">SIGN OUT</button>
 	                          </Link>
+	      </div>
 	   </>);
 	   
 	  return (
