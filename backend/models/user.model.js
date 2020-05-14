@@ -9,6 +9,6 @@ const mongoose = require('mongoose');
     
   });
 
-  const User = mongoose.model('Users', usersSchema);
+  const User = mongoose.model('User', usersSchema);
 
   module.exports = User;

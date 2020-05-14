@@ -29,9 +29,12 @@ class SignUp extends React.Component {
 			password :this.state.password
 		}
 		login(user).then(res =>{
-			if(res){
-				console.log("response",res);
+			if(res=== "token"){
+				
 				this.props.history.push('/home')
+			}
+			else{
+				this.props.history.push('/')
 			}
 		})
 	}

@@ -1,10 +1,12 @@
 const router = require('express').Router();
-let User = require('../models/user.model');
+
+const User = require('../models/user.model');
 const bcrypt = require('bcrypt');
 const cors = require("cors");
 const jwt = require ("jsonwebtoken");
 
 router.use(cors());
+
 
 process.env.SECRET_KEY = 'secret';
 router.route('/').get((req, res) =>{
@@ -13,7 +15,9 @@ router.route('/').get((req, res) =>{
 	.catch(err => res.status(400).json("Error" + err));
 });
 
-router.route('/register').post((req,res)=>{
+
+	router.post('/register', (req,res)=> {
+
 	const today = new Date();
 	const userData = {
 		fullname : req.body.fullname,
@@ -21,11 +25,13 @@ router.route('/register').post((req,res)=>{
 		password: req.body.password,
 		created : today
 
-	}
+	};
 	User.findOne({
 		email: req.body.email
-	}).then(user =>{ 
+	}).exec().then(user =>{ 
+		
 		    if(!user){
+
 				bcrypt.hash(req.body.password, 10, (err,hash)=>{
 					userData.password = hash
 					User.create(userData)
@@ -52,7 +58,7 @@ router.post('/login', (req,res)=> {
 		email: req.body.email
 	})
 	.then(user =>{
-		console.log("after log ", user);
+		
 		if(user){
 			if(bcrypt.compareSync(req.body.password, user.password)){
 				const payload = {
@@ -63,7 +69,7 @@ router.post('/login', (req,res)=> {
 				let token = jwt.sign(payload,process.env.SECRET_KEY,{
 					expiresIn : 1440
 				})
-				res.send(token)
+				res.send("token")
 			}else {
 				res.json({error : "User does not exist"});
 			}
