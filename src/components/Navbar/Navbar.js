@@ -8,7 +8,7 @@ class Navbar extends React.Component {
 	constructor(props){
 		super(props);
 	}
-   signOut(e) {
+   signOut=(e)=> {
    	e.preventDefault()
    	localStorage.removeItem('usertoken')
    	this.props.history.push('/')
@@ -20,7 +20,7 @@ class Navbar extends React.Component {
 	   	  </>);
 
 	   const afterLoggedIn = ( <>
-	   	 <Link to='/' ><button onClick={this.signOut} type="button" className="btn red right">SIGN OUT</button>
+	   	 <Link to='/signup' ><button onClick={this.signOut} type="button" className="btn red right">SIGN OUT</button>
 	                          </Link>
 	   </>);
 	   

@@ -8,16 +8,16 @@ class Register extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			fullname:' ',
-			email: ' ',
-			password :' '
+			fullname:'',
+			email: '',
+			password :''
 		}
 	}
 
-	onChange=(e) =>{
+	onChange=(e) => {
 		this.setState({[e.target.name]: e.target.value})
 	}
-	onSubmit=(e)=>{
+	onSubmit=(e)=> {
 		e.preventDefault();
 
 		const user = {
@@ -45,7 +45,7 @@ class Register extends React.Component {
 			       <div className="card register-card">
 
 			      <h5 className=""> Register</h5>
-			      <form noValidate >
+			      
 				        <div className="input-field container">
 				           <input id="name" 
 				                  type="text"
@@ -78,7 +78,7 @@ class Register extends React.Component {
 			               <button  onClick={this.onSubmit} type="submit" className="btn"> Register </button>
 
 			               <h6> Already have an account ?<a href='/signup'>Sign Up</a></h6>
-			       </form>
+			       
 			      </div>
 			    </div>
 			  

@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter , Route, Link} from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
+
 import './App.css';
 import ImageInputForm from './components/ImageInputForm/ImageInputForm';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';

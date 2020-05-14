@@ -13,13 +13,15 @@ class SignUp extends React.Component {
 		}
 	}
 
-	onChangeEmail=(e)=>{
+	onChangeEmail = (e) => {
 		this.setState({email: e.target.value})
 	}
-	onChangePassword=(e)=>{
+
+	onChangePassword = (e) => {
 		this.setState({password: e.target.value})
 	}
-	onSubmit=(e)=>{
+
+	onSubmit = (e) =>{
 		e.preventDefault();
 
 		const user = {
@@ -28,6 +30,7 @@ class SignUp extends React.Component {
 		}
 		login(user).then(res =>{
 			if(res){
+				console.log("response",res);
 				this.props.history.push('/home')
 			}
 		})
@@ -42,7 +45,7 @@ class SignUp extends React.Component {
 			    
 			       <div className="card signup-card">
 			       <h5 className=""> Sign Up </h5>
-				       <form noValidate onSubmit={this.onSubmit}>
+				      
 				        <div className="input-field container">
 				            <input id="email" 
 				                  name="email" 
@@ -60,12 +63,13 @@ class SignUp extends React.Component {
 				                   className="validate"
 				                  value={this.state.password}
 				                  onChange={this.onChangePassword} />
+
 				          <label htmlFor="passsword">Password</label>
 				        </div>
-				        <button type="submit" className="btn"> Sign Up </button>
+				        <button onClick={this.onSubmit} type="submit" className="btn"> Sign Up </button>
 
 				         <h6> Dont have an account? <a href='/register'>Register</a></h6>
-				        </form>
+				        
 			      </div>
 			    
 			  </div>

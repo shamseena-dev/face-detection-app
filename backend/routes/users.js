@@ -52,6 +52,7 @@ router.post('/login', (req,res)=> {
 		email: req.body.email
 	})
 	.then(user =>{
+		console.log("after log ", user);
 		if(user){
 			if(bcrypt.compareSync(req.body.password, user.password)){
 				const payload = {
