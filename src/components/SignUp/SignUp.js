@@ -13,10 +13,13 @@ class SignUp extends React.Component {
 		}
 	}
 
-	onChange(e){
-		this.setState({[e.target.name]: e.target.value})
+	onChangeEmail=(e)=>{
+		this.setState({email: e.target.value})
 	}
-	onSubmit(e){
+	onChangePassword=(e)=>{
+		this.setState({password: e.target.value})
+	}
+	onSubmit=(e)=>{
 		e.preventDefault();
 
 		const user = {
@@ -46,16 +49,17 @@ class SignUp extends React.Component {
 				                  type="email"
 				                   className="validate" 
 				                  value={this.state.email}
-				                  onChange={this.onChange} />
+				                  onChange={this.onChangeEmail} />
 				          <label htmlFor="email">Email</label>
 				        </div>
 				        <div class="input-field container">
 				          
 				           <input id="password"
 				                  type="password"
+				                  name="password"
 				                   className="validate"
 				                  value={this.state.password}
-				                  onChange={this.onChange} />
+				                  onChange={this.onChangePassword} />
 				          <label htmlFor="passsword">Password</label>
 				        </div>
 				        <button type="submit" className="btn"> Sign Up </button>
