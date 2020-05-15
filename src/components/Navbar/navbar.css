@@ -3,7 +3,7 @@
 	display:flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
 
 }
 .navbar-div .logo-img{
@@ -11,5 +11,5 @@
 
 }
 .navbar-div button{
-	margin-left: 70px; 
+	margin-left: 20px; 
 }
