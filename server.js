@@ -40,3 +40,7 @@ if(process.env.NODE_ENV === 'production'){
 app.listen(port, () =>{
 	console.log(`server is running on port ${port}`);
 })
+
+/*
+heroku config:set MONGODB_URI=mongodb+srv://Shamz:Shamx@db5@cluster0-jrm68.gcp.mongodb.net/test?retryWrites=true&w=majority -a face-app1
+*/
