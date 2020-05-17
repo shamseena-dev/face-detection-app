@@ -26,7 +26,7 @@ class Register extends React.Component {
 			password :this.state.password
 		}
 		register(user).then(res =>{
-			console.log("Registered Successfully!")
+			
 			if(res){
 					console.log("history",this.props.history);
 					this.props.history.push('/signup')
