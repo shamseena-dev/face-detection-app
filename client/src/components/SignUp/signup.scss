@@ -29,3 +29,14 @@
 	color: #ff3232;
 
 }
+
+@media all and (max-width:1000px){
+	.signup-card, .hint-card{
+	width:60vw;
+	}
+}
+@media all and (max-width:800px){
+	.signup-card, .hint-card{
+	width:70vw;
+	}
+}

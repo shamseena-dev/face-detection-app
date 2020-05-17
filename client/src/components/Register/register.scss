@@ -1,4 +1,4 @@
-.register-card{
+.register-card,.hint-card{
 
 	padding :40px;
 
@@ -26,4 +26,15 @@
 
 	color: #ff3232;
 
+}
+
+@media all and (max-width:1000px){
+	.register-card, .hint-card{
+	width:60vw;
+	}
+}
+@media all and (max-width:800px){
+	.register-card, .hint-card{
+	width:70vw;
+	}
 }
