@@ -1,12 +1,12 @@
 import React from 'react';
-import "./home.css";
-import logo from '../../logo.png';
-import "../Navbar/navbar.css";
+import "./home.scss";
+
 import sample from "../../sample.JPG";
 
 function Home(){
     return( <>
-			
+			      <div>
+            <h4> Enter Image URL to detect face/s in  it </h4>
             <ImageInputForm
                         onInputChange={this.onInputChange}
                         onButtonSubmit={this.onButtonSubmit}

@@ -1,13 +1,11 @@
 import React from 'react';
-import {BrowserRouter , Route, Link, withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import logo from '../../profile.png';
-import "./navbar.css";
+import "./navbar.scss";
 
 
 class Navbar extends React.Component {
-	constructor(props){
-		super(props);
-	}
+	
    signOut=(e)=> {
    	e.preventDefault()
    	localStorage.removeItem('usertoken')
@@ -29,7 +27,7 @@ class Navbar extends React.Component {
 	   </>);
 	   
 	  return (
-	     <nav className="darken-3 navbar black navbar-div">
+	     <nav className="darken-3 navbar blue-grey navbar-div">
 	     <img src={logo} alt="logo" style={{"width":"60px","height":"auto"}} className="left logo-img"/>
 	     <h4 className="center app-title"> FACE DETECTION APP </h4>
 	      {localStorage.usertoken ? afterLoggedIn : beforeLoggedIn}

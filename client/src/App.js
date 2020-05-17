@@ -1,8 +1,8 @@
 import React from 'react';
-import {BrowserRouter , Route, Link} from 'react-router-dom';
+import {BrowserRouter , Route} from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
 
-import './App.css';
+import './App.scss';
 import ImageInputForm from './components/ImageInputForm/ImageInputForm';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import Clarifai from 'clarifai';
@@ -10,9 +10,9 @@ import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import Register from './components/Register/Register';
 
-import logo from './profile.png';
-import sample from "./kids.JPG";
-import "./components/Navbar/navbar.css";
+
+
+import "./components/Navbar/navbar.scss";
 
 const app = new Clarifai.App({apiKey: '4e2ee373c4444f918cb57d903b6843a1'});
 
@@ -22,7 +22,7 @@ class App extends React.Component {
     super();
     this.state = {
       input: '',
-      imageUrl: sample,
+      imageUrl: '',
       boxes: [],
       
     }
@@ -83,14 +83,14 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
   render() {
-    const {history} = this.props;
+    
     const {  imageUrl, boxes } = this.state;
   return (
     <BrowserRouter>
     <div className="App">
     <Navbar />
       <Route path='/home' render={()=> <div>
-                      
+                      <h4 className="header-caption" style={{color:"grey"}} > Enter Image link to detect Face in it!!</h4>
                       <ImageInputForm
                         onInputChange={this.onInputChange}
                         onButtonSubmit={this.onButtonSubmit}
@@ -101,8 +101,9 @@ class App extends React.Component {
      <Route path='/signup' component={SignUp} />
      <Route path='/register' component={Register} />
      <Route path='/' exact component = {SignUp} />
-     
+    
     </div>
+     <Footer />
     </BrowserRouter>
     
   );

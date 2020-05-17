@@ -1,0 +1,28 @@
+
+
+.absoluteDiv{
+	margin-left:15vw;
+	position: absolute;
+	
+	
+	.bounding_box{
+	position:absolute;
+
+	box-shadow: 0 0 0 3px red inset;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content : center;
+	cursor:pointer;
+	
+}
+
+}
+
+
+
+@media all and (max-width:800px){
+	.absoluteDiv{
+	margin-left:auto;
+	
+}
+}

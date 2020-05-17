@@ -1,5 +1,5 @@
 import React from "react";
-import "./imageinputform.css";
+import "./imageinputform.scss";
 
     
 

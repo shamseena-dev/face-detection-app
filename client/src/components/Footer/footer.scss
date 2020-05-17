@@ -1,0 +1,21 @@
+.footer-div{
+
+	
+	margin-top:250px;
+	width:100%;
+	background-color: #111111;
+	clear:both;
+	height:60px;
+	bottom:0;
+	margin-bottom:0;
+	.copyright-div{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+		p{
+			color:grey;
+		}
+	}
+	
+}

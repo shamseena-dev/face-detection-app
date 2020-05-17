@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./imageDisplay.css";
+import "./imageDisplay.scss";
 
 
 
@@ -12,17 +12,19 @@ const ImageDisplay =({ imageUrl, boxes }) =>{
     
           
     return(
-        <div className="center card-div">
+        <div className="container">
+         <div className="center">
         <div className="absoluteDiv ">
         <img id='inputimage' className="border-img" alt='' src={imageUrl} width='500px' height='auto'/>
          
             
             {facelist} 
             
+
             
             
             
-            
+         </div>   
         </div>
         </div>
     );

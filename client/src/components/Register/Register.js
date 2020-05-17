@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from '../../logo.png';
-import "../Navbar/navbar.css";
+
 import "./register.scss";
 import {register} from "../Login_RegisterFunctions/Login_RegisterFunctions"
 
@@ -28,14 +27,14 @@ class Register extends React.Component {
 		register(user).then(res =>{
 			
 			if(res){
-					console.log("history",this.props.history);
+					
 					this.props.history.push('/signup')
 				}
 				
 			})
 	}
 	render(){
-		const {history} = this.props;
+		
 		return(
 			<>
 			
@@ -86,6 +85,7 @@ class Register extends React.Component {
 			        <p> Hint: You may SignUp using below credentials :</p> 
 			         <p>  <span style={{color:"grey"}}> Email </span> : test@gmail.com </p>
 			         <p>  <span style={{color:"grey"}}> Password </span> : 1234 </p> 
+			         <p style={{color:"red"}}> or Click here to <a href="/home"> SKIP SIGNUP </a> for now .</p>
 			         </div>
 			      </div>
 			  

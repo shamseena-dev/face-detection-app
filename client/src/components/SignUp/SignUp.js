@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from '../../logo.png';
-import "../Navbar/navbar.css";
+
 import "./signup.scss";
 import {login} from "../Login_RegisterFunctions/Login_RegisterFunctions"
 
@@ -39,13 +38,12 @@ class SignUp extends React.Component {
 		})
 	}
 	render(){
-		const {history} = this.props;
+	
 		return(
 			<>
 			
-			<div className="container">
-			  
-			    
+			<div className="container parent">
+			      
 			       <div className="card signup-card">
 			       <h5 className=""> Sign Up </h5>
 				      
@@ -58,7 +56,7 @@ class SignUp extends React.Component {
 				                  onChange={this.onChangeEmail} />
 				          <label htmlFor="email">Email</label>
 				        </div>
-				        <div class="input-field container">
+				        <div className="input-field container">
 				          
 				           <input id="password"
 				                  type="password"
@@ -80,10 +78,12 @@ class SignUp extends React.Component {
 			  </div>
 			  <div className="container">
 			         <div className="hint-card">
-			        <p> Hint: You may SignUp using below credentials :</p> 
-			         <p>  <span style={{color:"grey"}}> Email </span>: test@gmail.com </p>
-			         <p>  <span style={{color:"grey"}}> Password </span> : 1234 </p> 
+			        <p> <span style={{color:"white"}}> Hint: You may SignUp using below credentials :</span></p> 
+			         <p>  <span style={{color:"white"}}> Email </span>: test@gmail.com </p>
+			         <p>  <span style={{color:"white"}}> Password </span> : 1234 </p> 
+			         <p style={{color:"red"}}> or Click here to <a href="/home"> SKIP SIGNUP </a> for now .</p>
 			         </div>
+			          
 			      </div>
           </>
 			);

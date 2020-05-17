@@ -1,16 +1,18 @@
 import React from 'react';
-import "./footer.css";
+import "./footer.scss";
 function Footer(){
 	return(
-		  <footer className="page-footer footer-div">
+		  
+		  <footer className=" footer-div">
 
 		  
 		  <div className="copyright-div">
-             Shamz © 2020 Copyright Reserved
-            <p className="grey-text text-lighten-4 right" href="#!">Powered by Clarifai API</p>
+             <p className="" >Shamz © 2020 Copyright Reserved </p>
+            <p className="" >Powered by Clarifai API</p>
             </div>
          
         </footer>
+       
 		);
 
 }

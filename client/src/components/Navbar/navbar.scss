@@ -4,30 +4,33 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-
-}
-.navbar-div .logo-img{
+	.logo-img{
 	margin-right:20px;
 	
 
-}
-.navbar-div button{
+   }
+   button{
 	margin-left: 20px; 
 
+  }
+
 }
+
 
 @media all and (max-width:1000px){
-	.navbar-div .logo-img{
-	
-	margin-left:20px;
+	.navbar-div {
+		.logo-img{
+		
+		margin-left:20px;
 
-    }
-    .navbar-div button{
+	    }
+       button{
     	margin-right: 20px; 
 
-}
-.app-title{
+        }
+    .app-title{
 	font-size: 25px;
-}
+    }
 
+}
 }
