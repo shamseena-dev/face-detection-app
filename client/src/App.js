@@ -9,7 +9,8 @@ import Clarifai from 'clarifai';
 import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import Register from './components/Register/Register';
-import logo from './logo.png';
+
+import logo from './profile.png';
 import sample from "./kids.JPG";
 import "./components/Navbar/navbar.css";
 

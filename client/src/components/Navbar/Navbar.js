@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter , Route, Link, withRouter} from 'react-router-dom';
-import logo from '../../logo.png';
+import logo from '../../profile.png';
 import "./navbar.css";
 
 

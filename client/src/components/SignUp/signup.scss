@@ -1,4 +1,4 @@
-.signup-card{
+.signup-card, .hint-card{
 
 	padding :40px;
 
@@ -12,7 +12,9 @@
 
 }
 
-
+.hint-card p{
+		color: #ff3232;
+}
 
 .signup-card button{
 

@@ -72,10 +72,19 @@ class SignUp extends React.Component {
 				        <button onClick={this.onSubmit} type="submit" className="btn"> Sign Up </button>
 
 				         <h6> Dont have an account? <a href='/register'>Register</a></h6>
+
 				        
 			      </div>
+			      
 			    
 			  </div>
+			  <div className="container">
+			         <div className="hint-card">
+			        <p> Hint: You may SignUp using below credentials :</p> 
+			         <p>  <span style={{color:"grey"}}> Email </span>: test@gmail.com </p>
+			         <p>  <span style={{color:"grey"}}> Password </span> : 1234 </p> 
+			         </div>
+			      </div>
           </>
 			);
 

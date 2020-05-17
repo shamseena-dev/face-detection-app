@@ -81,6 +81,13 @@ class Register extends React.Component {
 			       
 			      </div>
 			    </div>
+			     <div className="container">
+			         <div className="hint-card">
+			        <p> Hint: You may SignUp using below credentials :</p> 
+			         <p>  <span style={{color:"grey"}}> Email </span> : test@gmail.com </p>
+			         <p>  <span style={{color:"grey"}}> Password </span> : 1234 </p> 
+			         </div>
+			      </div>
 			  
           </>
 			);
