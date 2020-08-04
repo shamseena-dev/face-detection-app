@@ -78,10 +78,10 @@ class SignUp extends React.Component {
 			  </div>
 			  <div className="container">
 			         <div className="hint-card">
-			        <p> <span style={{color:"white"}}> Hint: You may SignUp using below credentials :</span></p> 
-			         <p>  <span style={{color:"white"}}> Email </span>: test@gmail.com </p>
-			         <p>  <span style={{color:"white"}}> Password </span> : 1234 </p> 
-			         <p style={{color:"red"}}> or Click here to <a href="/home"> SKIP SIGNUP </a> for now .</p>
+			        <p> <span style={{color:"grey"}}> Hint: You may SignUp using below credentials :</span></p> 
+			         <p>  <span style={{color:"grey"}}> Email </span>: test@gmail.com </p>
+			         <p>  <span style={{color:"grey"}}> Password </span> : 1234 </p> 
+			         <p style={{color:"grey"}}> or Click here to <a href="/home"> SKIP SIGNUP </a> for now .</p>
 			         </div>
 			          
 			      </div>
