@@ -85,7 +85,7 @@ class Register extends React.Component {
 			        <p> Hint: You may SignUp using below credentials :</p> 
 			         <p>  <span style={{color:"grey"}}> Email </span> : test@gmail.com </p>
 			         <p>  <span style={{color:"grey"}}> Password </span> : 1234 </p> 
-			         <p style={{color:"red"}}> or Click here to <a href="/home"> SKIP SIGNUP </a> for now .</p>
+			         <p style={{color:"grey"}}> or Click here to <a href="/home"> SKIP SIGNUP </a> for now .</p>
 			         </div>
 			      </div>
 			  
